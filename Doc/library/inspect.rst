@@ -487,7 +487,7 @@ attributes (see :ref:`import-mod-attrs` for module attributes):
    .. versionadded:: 3.14
 
 
-.. function:: isgeneratorfunction(object)
+.. function:: isgeneratorfunction(obj)
 
    Return ``True`` if the object is a Python generator function.
 
@@ -511,7 +511,7 @@ attributes (see :ref:`import-mod-attrs` for module attributes):
    Return ``True`` if the object is a generator.
 
 
-.. function:: iscoroutinefunction(object)
+.. function:: iscoroutinefunction(obj)
 
    Return ``True`` if the object is a :term:`coroutine function` (a function
    defined with an :keyword:`async def` syntax), a :func:`functools.partial`
@@ -583,7 +583,7 @@ attributes (see :ref:`import-mod-attrs` for module attributes):
    .. versionadded:: 3.5
 
 
-.. function:: isasyncgenfunction(object)
+.. function:: isasyncgenfunction(obj)
 
    Return ``True`` if the object is an :term:`asynchronous generator` function,
    for example:
@@ -853,9 +853,9 @@ and its return annotation. To retrieve a :class:`!Signature` object,
 use the :func:`!signature`
 function.
 
-.. function:: signature(callable, *, follow_wrapped=True, globals=None, locals=None, eval_str=False, annotation_format=Format.VALUE)
+.. function:: signature(obj, *, follow_wrapped=True, globals=None, locals=None, eval_str=False, annotation_format=Format.VALUE)
 
-   Return a :class:`Signature` object for the given *callable*:
+   Return a :class:`Signature` object for the given callable *obj*:
 
    .. doctest::
 
@@ -1603,11 +1603,11 @@ line.
    .. versionchanged:: 3.11
       A list of :class:`FrameInfo` objects is returned.
 
-.. function:: getinnerframes(traceback, context=1)
+.. function:: getinnerframes(tb, context=1)
 
    Get a list of :class:`FrameInfo` objects for a traceback's frame and all
-   inner frames.  These frames represent calls made as a consequence of *frame*.
-   The first entry in the list represents *traceback*; the last entry represents
+   inner frames.  These frames represent calls made as a consequence of *tb*.
+   The first entry in the list represents *tb*; the last entry represents
    where the exception was raised.
 
    .. versionchanged:: 3.5
